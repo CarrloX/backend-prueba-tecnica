@@ -1,6 +1,6 @@
 package com.ejemplo.demo.api.dto.request;
 
-import com.ejemplo.demo.utils.enums.Role;
+import com.ejemplo.demo.utils.enums.UserRole;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -16,5 +16,5 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 public class UserUpdateRequest extends UserCreateRequest {
     @NotNull(message = "el rol es requerido")
-    private Role role;
+    private UserRole role;
 }

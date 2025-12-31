@@ -29,6 +29,6 @@ D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\infrastructur
 D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\infrastructure\helpers\generic_methods\GenericEntityService.java
 D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\infrastructure\helpers\mappers\UserMapper.java
 D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\infrastructure\helpers\services\UserService.java
-D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\utils\enums\Role.java
+D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\utils\enums\UserRole.java
 D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\utils\exceptions\IdNotFoundException.java
 D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\utils\messages\ErrorMessages.java

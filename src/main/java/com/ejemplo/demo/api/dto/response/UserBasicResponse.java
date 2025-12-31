@@ -1,6 +1,6 @@
 package com.ejemplo.demo.api.dto.response;
 
-import com.ejemplo.demo.utils.enums.Role;
+import com.ejemplo.demo.utils.enums.UserRole;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,5 +15,5 @@ public class UserBasicResponse {
     private Long id;
     private String username;
     private String email;
-    private Role role;
+    private UserRole role;
 }

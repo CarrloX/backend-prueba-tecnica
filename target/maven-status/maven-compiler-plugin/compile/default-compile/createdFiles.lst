@@ -8,7 +8,6 @@ com\ejemplo\demo\api\dto\request\RegisterRequest.class
 com\ejemplo\demo\api\dto\errors\ErrorsResponse$ErrorsResponseBuilderImpl.class
 com\ejemplo\demo\api\dto\response\UserResponse$UserResponseBuilder.class
 com\ejemplo\demo\infrastructure\abstract_services\IUserService.class
-com\ejemplo\demo\utils\enums\Role.class
 com\ejemplo\demo\domain\entities\UserEntity$UserEntityBuilder.class
 com\ejemplo\demo\api\dto\request\RegisterRequest$RegisterRequestBuilderImpl.class
 com\ejemplo\demo\utils\messages\ErrorMessages$ErrorMessagesBuilder.class
@@ -39,6 +38,7 @@ com\ejemplo\demo\infrastructure\helpers\services\UserService.class
 com\ejemplo\demo\api\dto\request\UserCreateRequest.class
 com\ejemplo\demo\domain\entities\repositories\UserRepository.class
 com\ejemplo\demo\api\dto\response\UserBasicResponse$UserBasicResponseBuilder.class
+com\ejemplo\demo\utils\enums\UserRole.class
 com\ejemplo\demo\api\dto\errors\BaseErrorResponse$BaseErrorResponseBuilder.class
 com\ejemplo\demo\api\controllers\Basic_controller\DeleteController.class
 com\ejemplo\demo\api\controllers\Basic_controller\GetAllController.class

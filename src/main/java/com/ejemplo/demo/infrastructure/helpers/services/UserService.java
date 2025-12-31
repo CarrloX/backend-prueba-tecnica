@@ -14,27 +14,24 @@ import com.ejemplo.demo.domain.entities.repositories.UserRepository;
 import com.ejemplo.demo.infrastructure.abstract_services.IUserService;
 import com.ejemplo.demo.infrastructure.helpers.generic_methods.GenericEntityService;
 import com.ejemplo.demo.infrastructure.helpers.mappers.UserMapper;
-import com.ejemplo.demo.utils.enums.Role;
+import com.ejemplo.demo.utils.enums.UserRole;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class UserService implements IUserService {
 
-    @Autowired
     private final UserRepository userRepository;
 
-    @Autowired
     private final UserMapper userMapper;
 
-    @Autowired
     private final GenericEntityService<UserEntity, Long> genericEntityService;
 
     @Override
     public UserBasicResponse create(UserCreateRequest request) {
         UserEntity userEntity = this.userMapper.toUserCreateEntity(request);
-        userEntity.setRole(Role.CUSTOMER);
+        userEntity.setRole(UserRole.CUSTOMER);
         return this.userMapper.toUserBasicResponse(this.userRepository.save(userEntity));
     }
 
@@ -45,7 +42,7 @@ public class UserService implements IUserService {
                 .password(request.getPassword())
                 .username(request.getEmail()) // usar email como username por defecto
                 .fullName("Usuario") // nombre por defecto
-                .role(Role.CUSTOMER)
+                .role(UserRole.CUSTOMER)
                 .build();
         return this.userMapper.toUserBasicResponse(this.userRepository.save(userEntity));
     }
