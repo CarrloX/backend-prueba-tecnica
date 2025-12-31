@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ejemplo.demo.api.controllers.Basic_controller.BasicController;
+import com.ejemplo.demo.api.dto.request.LoginRequest;
 import com.ejemplo.demo.api.dto.request.RegisterRequest;
 import com.ejemplo.demo.api.dto.request.UserCreateRequest;
 import com.ejemplo.demo.api.dto.request.UserUpdateRequest;
@@ -50,6 +51,11 @@ public class UserController implements
     @PostMapping("/register")
     public ResponseEntity<UserBasicResponse> register(@RequestBody RegisterRequest request) {
         return ResponseEntity.ok(this.userService.register(request));
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<UserBasicResponse> login(@RequestBody LoginRequest request) {
+        return ResponseEntity.ok(this.userService.login(request));
     }
 
 }

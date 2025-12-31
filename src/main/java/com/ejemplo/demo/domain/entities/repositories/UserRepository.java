@@ -8,5 +8,5 @@ import com.ejemplo.demo.domain.entities.UserEntity;
 
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
-
+    UserEntity findByEmail(String email);
 }

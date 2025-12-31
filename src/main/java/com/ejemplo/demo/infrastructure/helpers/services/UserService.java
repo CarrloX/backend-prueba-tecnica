@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
 
+import com.ejemplo.demo.api.dto.request.LoginRequest;
 import com.ejemplo.demo.api.dto.request.RegisterRequest;
 import com.ejemplo.demo.api.dto.request.UserCreateRequest;
 import com.ejemplo.demo.api.dto.request.UserUpdateRequest;
@@ -15,6 +16,7 @@ import com.ejemplo.demo.infrastructure.abstract_services.IUserService;
 import com.ejemplo.demo.infrastructure.helpers.generic_methods.GenericEntityService;
 import com.ejemplo.demo.infrastructure.helpers.mappers.UserMapper;
 import com.ejemplo.demo.utils.enums.UserRole;
+import com.ejemplo.demo.utils.exceptions.InvalidCredentialsException;
 
 import lombok.RequiredArgsConstructor;
 
@@ -66,5 +68,14 @@ public class UserService implements IUserService {
         UserEntity userEntity = this.genericEntityService.find(userRepository, id, "UserEntity");
         this.userRepository.delete(userEntity);
 
+    }
+
+    @Override
+    public UserBasicResponse login(LoginRequest request) {
+        UserEntity userEntity = this.userRepository.findByEmail(request.getEmail());
+        if (userEntity == null || !userEntity.getPassword().equals(request.getPassword())) {
+            throw new InvalidCredentialsException();
+        }
+        return this.userMapper.toUserBasicResponse(userEntity);
     }
 }

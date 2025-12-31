@@ -1,5 +1,6 @@
 package com.ejemplo.demo.infrastructure.abstract_services;
 
+import com.ejemplo.demo.api.dto.request.LoginRequest;
 import com.ejemplo.demo.api.dto.request.RegisterRequest;
 import com.ejemplo.demo.api.dto.request.UserCreateRequest;
 import com.ejemplo.demo.api.dto.request.UserUpdateRequest;
@@ -11,4 +12,5 @@ public interface IUserService extends
                 BasicCrudService<UserCreateRequest, UserUpdateRequest, UserResponse, UserBasicResponse, Long> {
 
     UserBasicResponse register(RegisterRequest request);
+    UserBasicResponse login(LoginRequest request);
 }

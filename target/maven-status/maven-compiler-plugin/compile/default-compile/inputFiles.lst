@@ -8,6 +8,7 @@ D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\api\controlle
 D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\api\dto\errors\BaseErrorResponse.java
 D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\api\dto\errors\ErrorResponse.java
 D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\api\dto\errors\ErrorsResponse.java
+D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\api\dto\request\LoginRequest.java
 D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\api\dto\request\RegisterRequest.java
 D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\api\dto\request\UserCreateRequest.java
 D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\api\dto\request\UserUpdateRequest.java
@@ -31,4 +32,5 @@ D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\infrastructur
 D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\infrastructure\helpers\services\UserService.java
 D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\utils\enums\UserRole.java
 D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\utils\exceptions\IdNotFoundException.java
+D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\utils\exceptions\InvalidCredentialsException.java
 D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\utils\messages\ErrorMessages.java
