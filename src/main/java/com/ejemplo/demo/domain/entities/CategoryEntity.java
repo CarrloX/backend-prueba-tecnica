@@ -36,4 +36,7 @@ public class CategoryEntity {
 
     @Column(length = 20, nullable = false)
     private String estado;
+
+    @Column(name = "user_id", nullable = false)
+    private Long userId;
 }

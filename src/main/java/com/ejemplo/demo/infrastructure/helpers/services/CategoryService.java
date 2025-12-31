@@ -23,33 +23,43 @@ public class CategoryService implements ICategoryService {
     private final GenericEntityService<CategoryEntity, Long> genericEntityService;
 
     @Override
-    public CategoryResponse create(CategoryRequest request) {
+    public CategoryResponse create(CategoryRequest request, Long userId) {
         CategoryEntity categoryEntity = this.categoryMapper.toCategoryEntity(request);
+        categoryEntity.setUserId(userId);
         return this.categoryMapper.toCategoryResponse(this.categoryRepository.save(categoryEntity));
     }
 
     @Override
-    public CategoryResponse getById(Long id) {
+    public CategoryResponse getById(Long id, Long userId) {
         CategoryEntity categoryEntity = this.genericEntityService.find(categoryRepository, id, "CategoryEntity");
+        if (!categoryEntity.getUserId().equals(userId)) {
+            throw new RuntimeException("Categoría no pertenece al usuario");
+        }
         return this.categoryMapper.toCategoryResponse(categoryEntity);
     }
 
     @Override
-    public CategoryResponse update(CategoryRequest request, Long id) {
+    public CategoryResponse update(CategoryRequest request, Long id, Long userId) {
         CategoryEntity categoryEntity = this.genericEntityService.find(categoryRepository, id, "CategoryEntity");
+        if (!categoryEntity.getUserId().equals(userId)) {
+            throw new RuntimeException("Categoría no pertenece al usuario");
+        }
         categoryEntity = this.categoryMapper.toCategoryUpdateEntity(request, categoryEntity);
         return this.categoryMapper.toCategoryResponse(this.categoryRepository.save(categoryEntity));
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(Long id, Long userId) {
         CategoryEntity categoryEntity = this.genericEntityService.find(categoryRepository, id, "CategoryEntity");
+        if (!categoryEntity.getUserId().equals(userId)) {
+            throw new RuntimeException("Categoría no pertenece al usuario");
+        }
         this.categoryRepository.delete(categoryEntity);
     }
 
     @Override
-    public List<CategoryResponse> getAll() {
-        List<CategoryEntity> categoryEntities = this.categoryRepository.findAll();
+    public List<CategoryResponse> getAll(Long userId) {
+        List<CategoryEntity> categoryEntities = this.categoryRepository.findByUserId(userId);
         return this.categoryMapper.toCategoryResponseList(categoryEntities);
     }
 }

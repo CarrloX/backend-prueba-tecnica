@@ -6,9 +6,9 @@ import com.ejemplo.demo.api.dto.response.CategoryResponse;
 import java.util.List;
 
 public interface ICategoryService {
-    CategoryResponse create(CategoryRequest request);
-    CategoryResponse getById(Long id);
-    CategoryResponse update(CategoryRequest request, Long id);
-    void delete(Long id);
-    List<CategoryResponse> getAll();
+    CategoryResponse create(CategoryRequest request, Long userId);
+    CategoryResponse getById(Long id, Long userId);
+    CategoryResponse update(CategoryRequest request, Long id, Long userId);
+    void delete(Long id, Long userId);
+    List<CategoryResponse> getAll(Long userId);
 }

@@ -18,6 +18,7 @@ public interface CategoryMapper {
 
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "fecha", ignore = true)
+    @Mapping(target = "userId", ignore = true)
     CategoryEntity toCategoryEntity(CategoryRequest request);
 
     @Mapping(target = "fecha", expression = "java(formatFecha(entity.getFecha()))")
@@ -27,6 +28,7 @@ public interface CategoryMapper {
 
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "fecha", ignore = true)
+    @Mapping(target = "userId", ignore = true)
     CategoryEntity toCategoryUpdateEntity(CategoryRequest request, @MappingTarget CategoryEntity category);
 
     default String formatFecha(LocalDateTime fecha) {
