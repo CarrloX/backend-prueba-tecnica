@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-12-30T22:39:26-0500",
-    comments = "version: 1.5.2.Final, compiler: Eclipse JDT (IDE) 3.44.0.v20251118-1623, environment: Java 21.0.9 (Eclipse Adoptium)"
+    date = "2025-12-30T22:49:19-0500",
+    comments = "version: 1.6.0, compiler: javac, environment: Java 21.0.8 (Eclipse Adoptium)"
 )
 @Component
 public class UserMapperImpl implements UserMapper {
@@ -24,10 +24,10 @@ public class UserMapperImpl implements UserMapper {
 
         UserEntity.UserEntityBuilder userEntity = UserEntity.builder();
 
+        userEntity.username( request.getUsername() );
+        userEntity.password( request.getPassword() );
         userEntity.email( request.getEmail() );
         userEntity.fullName( request.getFullName() );
-        userEntity.password( request.getPassword() );
-        userEntity.username( request.getUsername() );
 
         return userEntity.build();
     }
@@ -38,11 +38,11 @@ public class UserMapperImpl implements UserMapper {
             return user;
         }
 
+        user.setUsername( request.getUsername() );
+        user.setPassword( request.getPassword() );
         user.setEmail( request.getEmail() );
         user.setFullName( request.getFullName() );
-        user.setPassword( request.getPassword() );
         user.setRole( request.getRole() );
-        user.setUsername( request.getUsername() );
 
         return user;
     }
@@ -55,10 +55,10 @@ public class UserMapperImpl implements UserMapper {
 
         UserResponse.UserResponseBuilder<?, ?> userResponse = UserResponse.builder();
 
-        userResponse.email( userEntity.getEmail() );
         userResponse.id( userEntity.getId() );
-        userResponse.role( userEntity.getRole() );
         userResponse.username( userEntity.getUsername() );
+        userResponse.email( userEntity.getEmail() );
+        userResponse.role( userEntity.getRole() );
 
         return userResponse.build();
     }
@@ -71,10 +71,10 @@ public class UserMapperImpl implements UserMapper {
 
         UserBasicResponse.UserBasicResponseBuilder<?, ?> userBasicResponse = UserBasicResponse.builder();
 
-        userBasicResponse.email( userEntity.getEmail() );
         userBasicResponse.id( userEntity.getId() );
-        userBasicResponse.role( userEntity.getRole() );
         userBasicResponse.username( userEntity.getUsername() );
+        userBasicResponse.email( userEntity.getEmail() );
+        userBasicResponse.role( userEntity.getRole() );
 
         return userBasicResponse.build();
     }

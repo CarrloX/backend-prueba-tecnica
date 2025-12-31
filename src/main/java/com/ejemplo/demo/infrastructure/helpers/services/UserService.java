@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
 
+import com.ejemplo.demo.api.dto.request.RegisterRequest;
 import com.ejemplo.demo.api.dto.request.UserCreateRequest;
 import com.ejemplo.demo.api.dto.request.UserUpdateRequest;
 import com.ejemplo.demo.api.dto.response.UserBasicResponse;
@@ -34,6 +35,18 @@ public class UserService implements IUserService {
     public UserBasicResponse create(UserCreateRequest request) {
         UserEntity userEntity = this.userMapper.toUserCreateEntity(request);
         userEntity.setRole(Role.CUSTOMER);
+        return this.userMapper.toUserBasicResponse(this.userRepository.save(userEntity));
+    }
+
+    @Override
+    public UserBasicResponse register(RegisterRequest request) {
+        UserEntity userEntity = UserEntity.builder()
+                .email(request.getEmail())
+                .password(request.getPassword())
+                .username(request.getEmail()) // usar email como username por defecto
+                .fullName("Usuario") // nombre por defecto
+                .role(Role.CUSTOMER)
+                .build();
         return this.userMapper.toUserBasicResponse(this.userRepository.save(userEntity));
     }
 

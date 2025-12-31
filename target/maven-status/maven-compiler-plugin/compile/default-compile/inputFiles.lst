@@ -8,6 +8,7 @@ D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\api\controlle
 D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\api\dto\errors\BaseErrorResponse.java
 D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\api\dto\errors\ErrorResponse.java
 D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\api\dto\errors\ErrorsResponse.java
+D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\api\dto\request\RegisterRequest.java
 D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\api\dto\request\UserCreateRequest.java
 D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\api\dto\request\UserUpdateRequest.java
 D:\Descargas\backend-prueba-tecnica\src\main\java\com\ejemplo\demo\api\dto\response\UserBasicResponse.java
