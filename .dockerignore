@@ -1,0 +1,12 @@
+target/
+.git/
+.gitignore
+README.md
+HELP.md
+mvnw
+mvnw.cmd
+*.md
+.env
+.idea/
+.vscode/
+*.log
